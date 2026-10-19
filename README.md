@@ -1,108 +1,134 @@
-# prueba
+# prueba · Mercado Gastronómico Azteca
 
-Prueba técnica para la campaña interna «Come bien y a un excelente precio». La propuesta organiza las promociones por sede y día, con postres independientes, ofertas de septiembre identificadas como pendientes de vigencia y recomendaciones para Azteca Estudios.
+Landing responsiva para la campaña interna **«Come bien y a un excelente precio»**, desarrollada a partir del copy de `Prueba tecnica.docx`. Permite consultar promociones por sede y día, y las recomendaciones de uso de Azteca Estudios.
 
-## Estado de esta entrega
+## Ligas de entrega
 
-Diseño aprobado por el usuario, implementación completada y sitio público publicado. Se probaron interacciones, teclado, fuentes, imágenes y anchos de 360, 375, 768 y 1440 px en el navegador. Las pruebas automatizadas de fechas, navegación e integridad del contenido pasan. El repositorio prueba está publicado en GitHub Pages.
+| Entregable solicitado | Enlace |
+| --- | --- |
+| Archivo editable de Figma | [Diseño, wireframes y componentes](https://www.figma.com/design/bJrivLb6GsQ6rUVWeK3MCm) |
+| Repositorio de código | [DrabCat/prueba](https://github.com/DrabCat/prueba) |
+| Sitio publicado | [GitHub Pages · prueba](https://drabcat.github.io/prueba/) |
+| Errores e inconsistencias del copy y su resolución | [Auditoría completa](docs/AUDITORIA-COPY.md) |
 
-- [Archivo editable en Figma](https://www.figma.com/design/bJrivLb6GsQ6rUVWeK3MCm).
-- [Diseño móvil de 375 px](https://www.figma.com/design/bJrivLb6GsQ6rUVWeK3MCm?node-id=4-150).
-- [Diseño de escritorio de 1440 px](https://www.figma.com/design/bJrivLb6GsQ6rUVWeK3MCm?node-id=4-16).
-- [Repositorio de GitHub: prueba](https://github.com/DrabCat/prueba).
-- [Sitio público publicado y verificado](https://drabcat.github.io/prueba/).
+## Cómo correr el proyecto
 
-## Estructura actual
-
-```text
-prueba/
-  README.md
-  diseno-escritorio.png    Vista previa, no sustituye al archivo Figma
-  vista-movil.png          Evidencia del sitio implementado a 375 px
-  docs/
-    PLAN.md
-    AUDITORIA-COPY.md
-    DEFENSA.md
-    CREDITOS.md
-    VALIDACION.md
-  dist/
-    index.html            Estructura semántica y paneles de sede
-    css/styles.css        Estilos responsive y variables de Figma
-    js/app.js             Renderizado y accesibilidad de interacciones
-    js/data.js            Contenido comercial editable
-    js/domain.js          Fecha local y navegación con teclado
-    assets/               Fotografías, fuentes locales y licencias
-  scripts/serve.mjs        Servidor local sin dependencias
-  tests/domain.test.mjs    Fechas, teclado e integridad del inventario
-  package.json
-```
-
-## Figma
-
-Tres páginas: Wireframe, Diseño final y Componentes. Incluye cuatro wireframes geométricos de móvil y escritorio para ambas sedes, diez pantallas de TV Azteca (cinco días en cada ancho), dos de Azteca Estudios, Auto Layout, variables, estilos y componentes con propiedades editables. Se configuraron 72 enlaces entre sedes, días y CTA, además del hover del botón principal.
-
-La biblioteca cuenta con diecisiete colores, nueve tamaños de espaciado, tres radios, once estilos de texto y las familias Botón, Pestaña, Día y Tarjeta de promoción. DM Sans Bold compone el hero y las tarjetas tipo cartel; Playfair Display conserva la jerarquía editorial en los títulos de sección. Las únicas imágenes raster son fotografías de contenido; las interfaces se construyeron con nodos editables.
-
-El 19 de octubre de 2026 se actualizó el hero según la referencia visual del usuario: fotografía a sangre, degradado oscuro, título sans serif en verde lima, masthead verde oscuro y CTA a juego. El copy de campaña se conserva completo. El selector TV Azteca / Azteca Estudios permanece en la siguiente sección. El cambio está reflejado en las doce pantallas finales de Figma.
-
-## Arquitectura y decisiones de UX
-
-TV Azteca contiene las promociones de la semana, postres, Septiembre sabe a México y Más variedad llega para ti. Azteca Estudios contiene únicamente las recomendaciones recibidas en el brief. Las pestañas deben excluir visualmente el contenido de la sede inactiva.
-
-El selector de lunes a viernes deberá iniciar en el día local del navegador; el fin de semana mostrará lunes. Los postres no dependen de ese selector porque el brief les asigna días propios. Los precios conservan el símbolo $, cantidades, «desde», «combo» y «precio especial» tal como corresponde.
-
-No se crean descuentos ni datos comerciales. Las ofertas de septiembre mantienen año y vigencia por confirmar. Las fotografías son de referencia, no productos fotografiados de los proveedores.
-
-## Copy y supuestos
-
-La [auditoría completa](docs/AUDITORIA-COPY.md) registra las correcciones y decisiones. Destacan los acentos, «Consulta», numeración incompleta, WhatsApp duplicado, ausencia de logos, proveedor de tacos de canasta, precios ausentes y fechas sin año. Se interpretaron las siete ofertas posteriores al encabezado Viernes como pertenecientes a ese día y los primeros tres postres como disponibles lunes y jueves. Estas interpretaciones necesitan validación del área.
-
-## Tecnologías y ejecución local
-
-HTML5, CSS3 y JavaScript vanilla con módulos ES, sin framework ni paquetes de ejecución. CSS Grid y Flexbox permiten pasar de una columna móvil a las retículas de escritorio. Fotografías y fuentes se sirven desde archivos locales. No se requiere compilar ni ejecutar npm install.
-
-Con Node.js instalado, abre una terminal en la carpeta del proyecto y ejecuta:
+Necesitas Git y Node.js con npm. El proyecto no tiene dependencias de ejecución ni requiere compilación o `npm install`.
 
 ```sh
+git clone https://github.com/DrabCat/prueba.git
+cd prueba
 npm start
 ```
 
-Abre http://127.0.0.1:4173 en el navegador. El comando imprime la URL y mantiene el servidor abierto; Ctrl+C lo detiene. También puede utilizarse cualquier servidor estático apuntando a dist/. Los módulos ES requieren un servidor HTTP: no abrir index.html mediante file://.
+Abre **http://127.0.0.1:4173/** en el navegador. Detén el servidor con `Ctrl+C`. El servidor sirve la carpeta `dist/`; también puede utilizarse otro servidor estático que apunte a esa carpeta. No abrir `index.html` mediante `file://`, porque se utilizan módulos JavaScript ES.
+
+Para ejecutar las comprobaciones automatizadas:
 
 ```sh
 npm test
 ```
 
-La prueba recorre los siete días de una semana en hora local, comprueba Inicio/Fin y navegación circular y contrasta las cantidades del inventario. La fecha predeterminada usa getDay() local, sin UTC ni zona horaria fija.
+Las tres pruebas comprueban el día predeterminado durante los siete días de una semana en hora local, la navegación de teclado y la integridad del inventario comercial.
 
-## Actualizar promociones
+## Tecnologías utilizadas
 
-Edita las colecciones week, desserts, september o events en dist/js/data.js. Cada registro tiene vendor, title, price y, opcionalmente, detail e image. price es texto para conservar «desde», «combo», cantidades y condiciones sin reinterpretarlas. week tiene cinco listas, de lunes a viernes. Para agregar una oferta, añade un objeto a la lista correspondiente; no hace falta modificar el HTML de las tarjetas. Usa comillas válidas de JavaScript, ejecuta npm test y revisa la nueva tarjeta.
+| Tecnología o herramienta | Uso |
+| --- | --- |
+| HTML5 | Estructura semántica, secciones, pestañas y contenido accesible. |
+| CSS3 | Diseño responsivo con Grid y Flexbox, variables de color, foco, hover y adaptación de 360 a 1440 px. |
+| JavaScript vanilla con módulos ES | Cambio de sede, selector de día, renderizado de promociones y contenido separado de la presentación. |
+| Node.js | Servidor estático local y pruebas con `node:test`, sin dependencias externas. |
+| Figma | Wireframes, diseños finales, Auto Layout, estilos, variables y componentes reutilizables. |
+| GitHub y GitHub Actions | Repositorio con commits descriptivos, pruebas y publicación automática de `dist/` en GitHub Pages. |
 
-El contenido se inserta con textContent, sin evaluar HTML recibido. Las sedes usan el patrón accesible de pestañas con flechas e Inicio/Fin; el selector de día usa botones con aria-pressed, foco visible y navegación cíclica. La sede inactiva lleva hidden para excluirla de la vista y del árbol accesible. Se respeta prefers-reduced-motion.
+No se utilizó Tailwind ni otro framework de interfaz. Las fuentes DM Sans y Playfair Display y las fotografías se sirven localmente. Su procedencia y licencias están documentadas en [Créditos](docs/CREDITOS.md).
 
-## IA y herramientas utilizadas
+## Organización de la información y diseño
 
-Codex se utilizó para analizar el brief, auditar el copy, definir la arquitectura, redactar documentación, crear el diseño mediante Figma MCP y programar la landing y sus pruebas. Figma contiene textos, Auto Layout, variables, componentes e instancias. Se consultó su contexto de diseño para traducirlo a HTML/CSS/JavaScript. La herramienta web ayudó a localizar fotografías de Pexels y revisar su licencia. No se generaron fotografías con IA ni se fabricaron logotipos.
+La primera decisión es la **sede**. TV Azteca reúne las promociones de comida; Azteca Estudios contiene exclusivamente las recomendaciones recibidas en el brief. Solo se muestra el panel de la sede activa.
 
-## Validación y defensa
+En TV Azteca, las promociones de la semana se consultan por día. Al abrir la página se selecciona el día actual mediante `getDay()` local del navegador; sábado y domingo muestran lunes. Los postres permanecen aparte porque tienen su propia disponibilidad. Las ofertas y eventos de septiembre se presentan en una sección temporal con su aviso de vigencia pendiente.
 
-El [registro de validación](docs/VALIDACION.md) distingue las comprobaciones realizadas de las pendientes. La [defensa de entrevista](docs/DEFENSA.md) responde las cuatro preguntas del brief. Los créditos y límites de uso de imágenes están en [Créditos](docs/CREDITOS.md).
+La jerarquía de las tarjetas distingue proveedor, producto, precio y condiciones. La composición usa carteles en oliva, crema, lima y terracota; el hero utiliza DM Sans Bold y la misma paleta. En móvil las tarjetas siguen una columna y en escritorio usan retículas. Los botones de TV Azteca y Azteca Estudios están en la sección posterior al hero.
 
-## GitHub y publicación
+El archivo de Figma tiene páginas separadas para **Wireframe**, **Diseño final** y **Componentes**, con capas nombradas y Auto Layout. Incluye:
 
-El código está en [DrabCat/prueba](https://github.com/DrabCat/prueba) y el sitio está publicado en [GitHub Pages](https://drabcat.github.io/prueba/). El despliegue automático ejecuta las pruebas y publica dist/ al actualizar main. La primera ejecución de Pages finalizó correctamente y la copia descargada del repositorio coincide con los archivos de origen. El historial del repositorio conserva el commit inicial y las incorporaciones de documentación, código y recursos.
+- Cuatro wireframes geométricos sin textos ni fotografías: móvil y escritorio para ambas sedes, alineados con la estructura final.
+- Diseños finales de 375 y 1440 px; cinco días de TV Azteca en cada ancho y una vista de Estudios por ancho.
+- Pestañas activas de ambas sedes, día seleccionado y botones en estado normal, hover y foco.
+- Variables y estilos de color y tipografía, y componentes de botón, pestaña, día y tarjeta de promoción.
 
-Las tarjetas siguen el concepto de carteles gastronómicos: fondos oliva, crema, lima y terracota, precios grandes, trazos SVG decorativos y fotografías circulares recortadas. La paleta del hero usa los mismos tonos. No se modificó el contenido comercial.
+Accesos directos: [final móvil](https://www.figma.com/design/bJrivLb6GsQ6rUVWeK3MCm?node-id=4-150), [final de escritorio](https://www.figma.com/design/bJrivLb6GsQ6rUVWeK3MCm?node-id=4-16), [wireframe móvil](https://www.figma.com/design/bJrivLb6GsQ6rUVWeK3MCm?node-id=27-479) y [wireframe de escritorio](https://www.figma.com/design/bJrivLb6GsQ6rUVWeK3MCm?node-id=27-18).
 
+## Errores, inconsistencias y decisiones ante huecos del copy
 
-## GitHub Pages
+Las correcciones editoriales conservan los importes, cantidades, fechas, ubicaciones y condiciones originales. Los datos comerciales que faltan no se completaron con información inventada.
 
-El repositorio se publica con el nombre **prueba**. El workflow de .github/workflows/pages.yml ejecuta las pruebas y despliega únicamente dist/ cuando cambia main. Los recursos usan rutas relativas para funcionar bajo /prueba/. GitHub Actions está seleccionado como origen en Settings → Pages.
+| Hallazgo del documento | Resolución aplicada |
+| --- | --- |
+| Acentos ausentes, mayúsculas y espacios inconsistentes; «Consultas las promociones». | Corregir acentuación y puntuación; usar «Consulta las promociones» y el signo × sin cambiar cantidades. La grafía oficial de las marcas queda por validar. |
+| La primera recomendación no tenía número ni título, pero las siguientes eran 2 y 3. | Ordenar los tres grupos como 01 Loza y utensilios, 02 Uso de calefactores y 03 Uso de microondas. |
+| WhatsApp y la firma de campaña aparecían repetidos. | Mostrar un contacto común para reportar fallas y una firma compartida al pie, conservando el número 55 3006 2410. |
+| Septiembre no tiene año ni vigencia. | Conservar ofertas y eventos con el aviso visible «Año y vigencia por confirmar», sin presentarlos como vigentes ni inferir el año. |
+| Tacos de canasta sin proveedor. | Mostrar «Proveedor por confirmar» junto a $10 c/u; no asignarlos a otro negocio. |
+| Sin precio en paletas, mensajes de Doña Blanca y Emilia de septiembre y evento de Corte y Norte. | Mostrar «Precio por confirmar», conservando sus mensajes y condiciones disponibles. |
+| Siete ofertas después de Viernes, sin otro encabezado. | Interpretarlas como promociones del viernes según la jerarquía del documento; dejar la decisión registrada para validarla con el área. |
+| El encabezado «Lunes y jueves» abarca varios postres. | Aplicarlo a palomitas, Moyo y fresas/uvas; «Lunes a viernes» se aplica a las paletas. El alcance requiere confirmación. |
+| Se solicitaban logos, pero no se entregaron archivos. | Usar los nombres como texto y fotografías libres de referencia, sin crear ni simular logotipos oficiales. |
+| «Desde», «precio especial», «combo» y presentaciones sin detalle. | Mantener esas expresiones e importes. No añadir gramajes, descuentos, inclusiones ni interpretar $35 de Peribán como precio por pieza. |
+| «Todos los días» frente a una agenda de lunes a viernes; faltan horarios y direcciones generales. | Conservar el encabezado y la agenda originales, sin inventar horarios, operación de fin de semana, mapas o direcciones. |
+| Estudios contiene recomendaciones, incluido el término «calefactores», sin promociones. | Conservar todo ese contenido, incluidas las dos horas máximas de uso; no sustituir el equipo ni inventar ofertas para esa sede. |
 
-## Wireframes de baja fidelidad
+La [auditoría completa](docs/AUDITORIA-COPY.md) detalla cada corrección, los supuestos de producto, moneda y ubicación y los puntos por confirmar. Antes de uso institucional deben validarse la vigencia, los precios y proveedores pendientes, los logotipos y el alcance de los grupos del copy.
 
-Las cuatro vistas de baja fidelidad siguen la estructura del diseño final: escritorio y móvil para TV Azteca y Azteca Estudios. Se eliminaron textos, fotografías, colores de marca y adornos; solo quedan bloques grises, líneas de contenido y marcadores de imagen editables. Hero, selector de sede, tarjetas, retículas y secciones conservan la disposición final.
+## Uso de IA y herramientas de apoyo
 
-- [Baja de escritorio](https://www.figma.com/design/bJrivLb6GsQ6rUVWeK3MCm?node-id=27-18).
-- [Baja móvil](https://www.figma.com/design/bJrivLb6GsQ6rUVWeK3MCm?node-id=27-479).
+El documento permite IA y solicita indicar dónde se utilizó:
+
+| Herramienta | Partes en las que se utilizó |
+| --- | --- |
+| Codex | Análisis del brief, detección de huecos, propuesta de arquitectura y diseño, creación y ajustes de HTML/CSS/JavaScript, pruebas y redacción de documentación. |
+| Figma mediante MCP, operado desde Codex | Creación y edición de capas, Auto Layout, variables, estilos, componentes, estados y wireframes; consulta del diseño para trasladarlo a código. |
+| Búsqueda web asistida desde Codex | Localización de fotografías libres y consulta de documentación técnica y licencias. Las fuentes se registran en [Créditos](docs/CREDITOS.md). |
+| Navegador integrado automatizado desde Codex | Revisión visual, comprobación de tamaños, navegación por sede y día, carga de recursos y verificación de la publicación. |
+
+No se generaron fotografías con IA. Tampoco se utilizó IA para completar precios, promociones, fechas o condiciones que no figuran en el documento. Figma y GitHub son herramientas de diseño y publicación; se incluyen en la tabla para precisar cómo se operaron dentro del flujo asistido.
+
+## Verificación y accesibilidad
+
+Se comprobó el sitio publicado a 360, 375, 768 y 1440 px sin desbordamiento horizontal, la carga de las tres fotografías y las fuentes locales, las siete promociones del viernes y las trece indicaciones de Estudios. Las tres pruebas automatizadas pasan y el despliegue en GitHub Pages termina correctamente.
+
+La implementación incluye texto alternativo, contraste revisado, foco visible, navegación con flechas e Inicio/Fin, atributos ARIA para pestañas y días, exclusión del panel inactivo con `hidden` y respeto a `prefers-reduced-motion`. Las pruebas se realizaron con tamaños simulados en el navegador integrado; quedan pendientes pruebas con lectores de pantalla y dispositivos físicos. El detalle y sus límites están en [Validación](docs/VALIDACION.md).
+
+## Mantenimiento y presentación
+
+**¿Cómo agregar promociones a última hora?** Editar `dist/js/data.js`: añadir un registro con `vendor`, `title`, `price` y, si aplica, `detail` e `image` a la colección correspondiente. `week` contiene cinco listas de lunes a viernes; `desserts`, `september` y `events` son independientes. La plantilla reutilizable genera la tarjeta. Conservar el precio como texto, ejecutar `npm test` y revisar la oferta en móvil antes de publicar.
+
+**¿Por qué esta organización?** Sede y día responden primero dónde está el colaborador y qué puede comer hoy; postres, temporada y recomendaciones conservan sus propios contextos y disponibilidad.
+
+**¿Qué errores se resolvieron?** Se corrigió la forma editorial y se hicieron visibles los datos faltantes. La tabla anterior y la auditoría distinguen las soluciones aplicadas de las confirmaciones comerciales pendientes.
+
+**¿Qué mejoraría con más tiempo?** Validar las ambigüedades con el área, incorporar imágenes reales y logos autorizados, probar con colaboradores y lectores de pantalla y establecer un flujo editorial con aprobación y fechas de publicación y retiro. La [defensa del proyecto](docs/DEFENSA.md) amplía estas respuestas.
+
+## Estructura del repositorio
+
+```text
+prueba/
+  README.md
+  .github/workflows/pages.yml  Pruebas y despliegue de dist/
+  dist/
+    index.html                Estructura de la landing
+    css/styles.css            Estilos y adaptación responsive
+    js/app.js                 Interacciones y renderizado
+    js/data.js                Copy y promociones editables
+    js/domain.js              Fecha local y navegación de teclado
+    assets/                   Fotografías, fuentes y licencias
+  scripts/serve.mjs            Servidor local
+  tests/domain.test.mjs        Comprobaciones automatizadas
+  docs/                       Auditoría, créditos, validación y defensa
+  *.png                      Vistas de referencia del diseño y wireframes
+  package.json
+```
+
+GitHub Actions publica `dist/` al actualizar `main`. Los recursos usan rutas relativas para funcionar bajo `/prueba/`.
