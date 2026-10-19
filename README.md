@@ -1,21 +1,21 @@
-# Mercado Gastronómico Azteca
+# prueba
 
 Prueba técnica para la campaña interna «Come bien y a un excelente precio». La propuesta organiza las promociones por sede y día, con postres independientes, ofertas de septiembre identificadas como pendientes de vigencia y recomendaciones para Azteca Estudios.
 
 ## Estado de esta entrega
 
-Diseño aprobado por el usuario, implementación completada y sitio público publicado. Se probaron interacciones, teclado, fuentes, imágenes y anchos de 360, 375, 768 y 1440 px en el navegador. Las pruebas automatizadas de fechas, navegación e integridad del contenido pasan. Se está preparando el repositorio prueba para publicarlo en GitHub Pages.
+Diseño aprobado por el usuario, implementación completada y sitio público publicado. Se probaron interacciones, teclado, fuentes, imágenes y anchos de 360, 375, 768 y 1440 px en el navegador. Las pruebas automatizadas de fechas, navegación e integridad del contenido pasan. El repositorio prueba está publicado en GitHub Pages.
 
 - [Archivo editable en Figma](https://www.figma.com/design/bJrivLb6GsQ6rUVWeK3MCm).
 - [Diseño móvil de 375 px](https://www.figma.com/design/bJrivLb6GsQ6rUVWeK3MCm?node-id=4-150).
 - [Diseño de escritorio de 1440 px](https://www.figma.com/design/bJrivLb6GsQ6rUVWeK3MCm?node-id=4-16).
 - [Repositorio de GitHub: prueba](https://github.com/DrabCat/prueba).
-- [Sitio público publicado y verificado](https://mercado-azteca-prueba-daniela.peppyswift18.chatgpt.site).
+- [Sitio público publicado y verificado](https://drabcat.github.io/prueba/).
 
 ## Estructura actual
 
 ```text
-mercado-azteca/
+prueba/
   README.md
   diseno-escritorio.png    Vista previa, no sustituye al archivo Figma
   vista-movil.png          Evidencia del sitio implementado a 375 px
@@ -39,7 +39,7 @@ mercado-azteca/
 
 ## Figma
 
-Tres páginas: Wireframe, Diseño final y Componentes. Incluye wireframes móviles de ambas sedes, diez pantallas de TV Azteca (cinco días en cada ancho), dos de Azteca Estudios, Auto Layout, variables, estilos y componentes con propiedades editables. Se configuraron 72 enlaces entre sedes, días y CTA, además del hover del botón principal.
+Tres páginas: Wireframe, Diseño final y Componentes. Incluye cuatro wireframes geométricos de móvil y escritorio para ambas sedes, diez pantallas de TV Azteca (cinco días en cada ancho), dos de Azteca Estudios, Auto Layout, variables, estilos y componentes con propiedades editables. Se configuraron 72 enlaces entre sedes, días y CTA, además del hover del botón principal.
 
 La biblioteca cuenta con diecisiete colores, nueve tamaños de espaciado, tres radios, once estilos de texto y las familias Botón, Pestaña, Día y Tarjeta de promoción. DM Sans Bold compone el hero y las tarjetas tipo cartel; Playfair Display conserva la jerarquía editorial en los títulos de sección. Las únicas imágenes raster son fotografías de contenido; las interfaces se construyeron con nodos editables.
 
@@ -91,16 +91,14 @@ El [registro de validación](docs/VALIDACION.md) distingue las comprobaciones re
 
 ## GitHub y publicación
 
-La conexión GitHub identifica la cuenta DrabCat. Sus herramientas disponibles no incluyen crear repositorios nuevos y no hay un cliente gh instalado ni credencial GitHub no interactiva disponible. El usuario compartirá un repositorio vacío para recibir el código. Hay commits locales descriptivos de documentación e implementación. Sites publicó una versión y se cambió a acceso público por autorización expresa del usuario; se comprobó que carga sin iniciar sesión. La publicación no requiere GitHub Pages: usa el hosting estático equivalente de Sites.
-
-Para publicar el mismo proyecto en GitHub Pages cuando exista el repositorio, configura un despliegue desde Actions que suba dist/ como artefacto de Pages o utiliza otra plataforma estática con esa carpeta como raíz. No expongas credenciales ni cambies los datos pendientes de validación solo para completar la entrega. No se enviará ningún correo porque el usuario no lo solicitó.
+El código está en [DrabCat/prueba](https://github.com/DrabCat/prueba) y el sitio está publicado en [GitHub Pages](https://drabcat.github.io/prueba/). El despliegue automático ejecuta las pruebas y publica dist/ al actualizar main. La primera ejecución de Pages finalizó correctamente y la copia descargada del repositorio coincide con los archivos de origen. El historial del repositorio conserva el commit inicial y las incorporaciones de documentación, código y recursos.
 
 Las tarjetas siguen el concepto de carteles gastronómicos: fondos oliva, crema, lima y terracota, precios grandes, trazos SVG decorativos y fotografías circulares recortadas. La paleta del hero usa los mismos tonos. No se modificó el contenido comercial.
 
 
 ## GitHub Pages
 
-El repositorio se publica con el nombre **prueba**. El workflow de .github/workflows/pages.yml ejecuta las pruebas y despliega únicamente dist/ cuando cambia main. Los recursos usan rutas relativas para funcionar bajo /prueba/. El despliegue requiere seleccionar GitHub Actions en Settings → Pages del repositorio.
+El repositorio se publica con el nombre **prueba**. El workflow de .github/workflows/pages.yml ejecuta las pruebas y despliega únicamente dist/ cuando cambia main. Los recursos usan rutas relativas para funcionar bajo /prueba/. GitHub Actions está seleccionado como origen en Settings → Pages.
 
 ## Wireframes de baja fidelidad
 
