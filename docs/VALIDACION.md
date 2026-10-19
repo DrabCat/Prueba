@@ -52,7 +52,7 @@ La vista previa local fue bloqueada por el entorno del navegador. Las pruebas vi
 
 ## Pendientes
 
-- Recibir la URL del repositorio GitHub vacío para subir el código; la integración disponible no crea repositorios nuevos.
+- Repositorio recibido y publicado: https://github.com/DrabCat/prueba.
 - Validar comercialmente los pendientes de la auditoría antes del uso institucional.
 
 ## Actualización del hero del 19 de octubre de 2026
@@ -78,3 +78,11 @@ Contrastes de texto de las tarjetas: crema/oliva 7.88:1, oscuro/crema 11.22:1, o
 Se reemplazó la página de baja fidelidad anterior por cuatro vistas geométricas editables: 1440 px y 375 px para ambas sedes. Se reconstruyeron desde la jerarquía del final y se retiraron todas las capas de texto y los rellenos de imagen. La comprobación devuelve cero nodos TEXT y cero fotografías en las cuatro vistas. Las retículas incluyen dos promociones del lunes, cuatro postres, cuatro promociones de temporada y tres eventos; Estudios conserva sus tres grupos y el bloque de contacto.
 
 El repositorio y el paquete usan el nombre prueba. Se agregó el workflow oficial de GitHub Pages, limitado a dist/, con las tres pruebas existentes antes de publicar. Las rutas de recursos son relativas para admitir el subdirectorio del repositorio.
+
+
+## Publicación en GitHub Pages
+
+Repositorio público: https://github.com/DrabCat/prueba. Sitio: https://drabcat.github.io/prueba/. Primera publicación: workflow 39306500949, commit 364c8425ca5e8a5a11a2addd6746f5513edc5195, resultado success; pruebas, carga de artefacto y despliegue completados. Se descargó una copia pública y se compararon los archivos: no faltan archivos ni hay diferencias de contenido o de binarios. Las tres pruebas pasan también en esa copia. La subida se realizó mediante la sesión del navegador del usuario; la integración GitHub devolvió 403 al intentar escribir un blob.
+
+
+La URL de GitHub Pages se comprobó en el navegador: las tres fotografías y DM Sans cargan correctamente, las siete promociones del viernes aparecen y las trece indicaciones de Estudios se muestran al cambiar de sede. En 360, 375, 768 y 1440 px no hay desbordamiento horizontal. La captura prueba-github-pages.png corresponde a esta publicación.
