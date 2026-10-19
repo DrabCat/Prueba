@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#faf7e8">
+  <meta name="description" content="Consulta las promociones del Mercado Gastronómico Azteca por día y las recomendaciones de Azteca Estudios.">
+  <title>Come bien y a un excelente precio | Mercado Gastronómico Azteca</title>
+  <link rel="icon" href="data:,">
+  <link rel="preload" href="assets/fonts/playfair-regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="assets/fonts/dm-sans-regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="assets/fonts/dm-sans-bold.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#sedes">Saltar a promociones y recomendaciones</a>
+  <header class="site-header">
+    <div class="site-header-inner container">
+      <p class="brand">Mercado<span>Gastronómico Azteca</span></p>
+      <p class="internal-label">Comunicación interna</p>
+    </div>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="campaign-title">
+      <img class="hero-background" src="assets/tacos.jpg" width="1200" height="800" alt="Tacos servidos con limón y cebolla en un puesto de comida, fotografía de referencia" fetchpriority="high">
+      <div class="hero-copy container stack">
+        <p class="eyebrow">El buen sabor de tu día</p>
+        <h1 id="campaign-title"><span>Come bien y a un</span> <span>excelente precio</span></h1>
+        <p class="intro">Tus favoritos de Mercado Gastronómico Azteca te esperan todos los días. Disfruta desde increíbles platillos, hamburguesas, tacos, sushi, quesadillas, bebidas y más.</p>
+        <a class="button" href="#sedes">Ver promociones</a>
+      </div>
+      <p class="hero-photo-note">Fotografía de referencia.</p>
+    </section>
+
+    <div class="venue-section container stack" id="sedes">
+      <p class="muted">Consulta las promociones que tenemos para ti</p>
+      <div class="venue-tabs" role="tablist" aria-label="Selecciona tu sede">
+        <button class="tab" id="tab-tv" role="tab" aria-selected="true" aria-controls="panel-tv" tabindex="0">TV Azteca</button>
+        <button class="tab" id="tab-estudios" role="tab" aria-selected="false" aria-controls="panel-estudios" tabindex="-1">Azteca Estudios</button>
+      </div>
+    </div>
+
+    <section id="panel-tv" role="tabpanel" aria-labelledby="tab-tv" tabindex="0">
+      <section class="week-section container stack" aria-labelledby="week-title">
+        <p class="eyebrow">Promociones de la semana</p>
+        <h2 id="week-title">¿Qué se te antoja hoy?</h2>
+        <div class="day-selector" role="toolbar" aria-label="Día de promociones" aria-describedby="day-help" id="day-selector"></div>
+        <p class="sr-only" id="day-help">Usa las flechas izquierda y derecha para cambiar de día. Inicio y Fin seleccionan el primer y último día.</p>
+        <p class="caption" id="day-status" role="status" aria-live="polite" aria-atomic="true"></p>
+        <div class="promo-grid" id="daily-promos"></div>
+        <p class="caption" id="photo-note" hidden>Fotografías de referencia; las presentaciones pueden variar.</p>
+      </section>
+
+      <section class="dessert-section section-band" aria-labelledby="dessert-title">
+        <div class="container stack">
+          <p class="eyebrow">¿Antojo de algo dulce?</p>
+          <h2 id="dessert-title">Para el postre siempre hay espacio</h2>
+          <div class="promo-grid dessert-grid" id="dessert-promos"></div>
+        </div>
+      </section>
+
+      <section class="seasonal-section container stack" aria-labelledby="seasonal-title">
+        <p class="eyebrow">Sabores de temporada</p>
+        <h2 id="seasonal-title">Septiembre sabe a México</h2>
+        <div class="notice">
+          <p class="label">Año y vigencia por confirmar</p>
+          <p class="muted">Estas promociones y eventos de septiembre tienen año y vigencia por confirmar.</p>
+        </div>
+        <div class="promo-grid seasonal-grid" id="seasonal-promos"></div>
+        <h2 id="events-title">¡Más variedad llega para ti!</h2>
+        <div class="promo-grid event-grid" id="event-promos" aria-labelledby="events-title"></div>
+      </section>
+    </section>
+
+    <section id="panel-estudios" role="tabpanel" aria-labelledby="tab-estudios" tabindex="0" hidden>
+      <div class="studies-section container stack">
+        <p class="eyebrow">Recomendaciones importantes</p>
+        <h2>Cuidemos lo que compartimos</h2>
+        <div class="recommendations-grid" id="recommendations"></div>
+        <p class="thanks">¡Gracias por ayudarnos a mantenerlos en buen estado!</p>
+        <div class="contact stack">
+          <h3>¿Detectaste alguna falla?</h3>
+          <p>Repórtala por WhatsApp al <span class="phone">55 3006 2410</span></p>
+          <a class="button button-wide" href="https://wa.me/525530062410" target="_blank" rel="noopener noreferrer" aria-label="Reportar por WhatsApp al 55 3006 2410, abre en otra pestaña">Reportar por WhatsApp</a>
+        </div>
+      </div>
+    </section>
+    <noscript><p class="container notice">Activa JavaScript para consultar las promociones por día y las recomendaciones de cada sede.</p></noscript>
+  </main>
+  <footer class="site-footer">
+    <div class="container stack">
+      <p class="footer-signature">Calidad, sabor y precio</p>
+      <p class="caption">Mercado Gastronómico Azteca</p>
+    </div>
+  </footer>
+</body>
+</html>
